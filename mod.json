@@ -1,0 +1,102 @@
+{
+	"geode": "5.11.2",
+	"gd": {
+		"android": "2.2081"
+	},
+	"id": "lleomc2.slime",
+	"name": "Slime",
+	"version": "v1.0.0",
+	"developer": "lleomc2",
+	"description": "Bloques de slime que rebotan (por grupo, sin tocar el editor) y un estilo visual de gelatina verde.",
+	"settings": {
+		"bounce-enabled": {
+			"type": "bool",
+			"name": "Rebote de slime",
+			"description": "Los objetos que estén en el grupo de slime devuelven al jugador hacia arriba cuando cae sobre ellos.",
+			"default": true
+		},
+		"slime-group": {
+			"type": "int",
+			"name": "Grupo de los bloques slime",
+			"description": "En el editor asigná este número de grupo a un bloque y rebota como slime. Funciona también en gravedad invertida. Por defecto 777.",
+			"default": 777,
+			"min": 1,
+			"max": 9999,
+			"control": {
+				"input": true,
+				"slider": false
+			}
+		},
+		"bounce-power": {
+			"type": "int",
+			"name": "Fuerza del rebote (%)",
+			"description": "Qué parte de la velocidad de caída se devuelve. 100 = rebota igual de fuerte que cayó. Más de 100 gana altura en cada rebote.",
+			"default": 90,
+			"min": 30,
+			"max": 150,
+			"control": {
+				"slider": true,
+				"slider-step": 5,
+				"input": true
+			}
+		},
+		"bounce-min-fall": {
+			"type": "float",
+			"name": "Velocidad mínima de caída",
+			"description": "Si caés más lento que esto no rebota (así podés quedarte parado sobre el bloque). Si no rebota nunca, bajala.",
+			"default": 3.0,
+			"min": 0.5,
+			"max": 12.0,
+			"control": {
+				"slider": true,
+				"slider-step": 0.5,
+				"input": true
+			}
+		},
+		"bounce-min": {
+			"type": "float",
+			"name": "Rebote mínimo",
+			"description": "Velocidad de salida mínima cuando rebota (como referencia, un salto normal de cubo es ~11).",
+			"default": 6.0,
+			"min": 1.0,
+			"max": 20.0,
+			"control": {
+				"slider": true,
+				"slider-step": 0.5,
+				"input": true
+			}
+		},
+		"bounce-max": {
+			"type": "float",
+			"name": "Rebote máximo",
+			"description": "Velocidad de salida máxima, para que no salgas disparado al espacio.",
+			"default": 22.0,
+			"min": 8.0,
+			"max": 40.0,
+			"control": {
+				"slider": true,
+				"slider-step": 0.5,
+				"input": true
+			}
+		},
+		"slime-style": {
+			"type": "bool",
+			"name": "Estilo slime",
+			"description": "Pinta los bloques y la decoración del nivel como gelatina verde con brillo húmedo. Se aplica al entrar a un nivel. Funciona junto con DLSS5 Geode.",
+			"default": false
+		},
+		"style-amount": {
+			"type": "int",
+			"name": "Intensidad del estilo slime (%)",
+			"description": "100 = todo verde gelatina. Más bajo mezcla con los colores originales del nivel.",
+			"default": 85,
+			"min": 0,
+			"max": 100,
+			"control": {
+				"slider": true,
+				"slider-step": 5,
+				"input": true
+			}
+		}
+	}
+}
