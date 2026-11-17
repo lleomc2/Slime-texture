@@ -1,0 +1,26 @@
+name: Compilar Slime (Android ARM64)
+
+on:
+  workflow_dispatch:
+  push:
+    branches: ["**"]
+
+jobs:
+  build:
+    name: Android64
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Compilar el mod
+        id: build
+        uses: geode-sdk/build-geode-mod@main
+        with:
+          target: Android64
+          sdk: given
+
+      - name: Subir el .geode
+        uses: actions/upload-artifact@v4
+        with:
+          name: Slime-geode
+          path: ${{ steps.build.outputs.build-output }}
